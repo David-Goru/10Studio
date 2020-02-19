@@ -18,13 +18,13 @@ public class SceneGenerator : MonoBehaviour
         GameObject baseRoom1 = Resources.Load<GameObject>("Rooms/Base/Base room 1");
         GameObject baseRoom2 = Resources.Load<GameObject>("Rooms/Base/Base room 2");
 
-        roomRot = Quaternion.Euler(0, 45, 0);
+        roomRot = Quaternion.Euler(0, 135, 0);
 
         for (int i = 0; i < 10; i++)
         {
             for (int j = 0; j < 4; j++)
             {
-                roomPos = new Vector3(((j % 2 == 0) ? 2.825f : 0) + i * 5.65f, j * 4, -j * 2.8f);
+                roomPos = new Vector3(((j % 2 == 0) ? 9 : 0) + i * 18, j * 12.8f, -j * 9);
 
                 Instantiate((Random.Range(0, 2) >= 1) ? baseRoom1 : baseRoom2, roomPos, roomRot);
                 
