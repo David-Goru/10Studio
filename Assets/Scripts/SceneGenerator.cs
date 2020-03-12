@@ -15,21 +15,24 @@ public class SceneGenerator : MonoBehaviour
     void GenerateRooms()
     {
         // Test rooms
-        GameObject baseRoom1 = Resources.Load<GameObject>("Rooms/Base/Base room 1");
-        GameObject baseRoom2 = Resources.Load<GameObject>("Rooms/Base/Base room 2");
+        GameObject baseRoom = Resources.Load<GameObject>("Rooms/Base room");
+        GameObject sellRoom = Resources.Load<GameObject>("Rooms/Sell room");
+        GameObject commerceRoom = Resources.Load<GameObject>("Rooms/Commerce room");
 
         roomRot = Quaternion.Euler(0, 135, 0);
 
-        for (int i = 0; i < 10; i++)
+        for (int i = -5; i < 5; i++)
         {
             for (int j = 0; j < 4; j++)
             {
                 roomPos = new Vector3(((j % 2 == 0) ? 9 : 0) + i * 18, j * 12.8f, -j * 9);
 
-                Instantiate((Random.Range(0, 2) >= 1) ? baseRoom1 : baseRoom2, roomPos, roomRot);
-                
-                
-                //Instantiate((Random.Range(0, 2) >= 1) ? baseRoom1 : baseRoom2, new Vector3(((j % 2 == 0) ? 2.825f : 0) + i * 5.65f, j * 4, -j * 2.8f), Quaternion.Euler(0, 0, 0));
+                if (i == 0 && j == 3)
+                {
+
+                    Instantiate(baseRoom, roomPos, roomRot);
+                }
+                else Instantiate((Random.Range(0, 2) >= 1) ? baseRoom : ((Random.Range(0, 2) >= 1) ? sellRoom : commerceRoom), roomPos, roomRot);
             }
         }
     }
