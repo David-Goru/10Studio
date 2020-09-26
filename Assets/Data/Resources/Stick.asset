@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0239f81d7158b04ebda2badf7bdb4d1, type: 3}
   m_Name: Stick
   m_EditorClassIdentifier: 
-  Name: Stick
   Amount: 0
   Counter: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 07a2f8b6cc912eb43aa34e1c276cf35d, type: 3}

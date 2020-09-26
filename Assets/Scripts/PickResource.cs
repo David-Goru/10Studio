@@ -8,7 +8,7 @@ public class PickResource : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (Vector3.Distance(GameObject.Find("Player").transform.position, transform.position) <= 2.5f)
+        if (Vector3.Distance(GameObject.Find("Player").transform.position, transform.position) <= 3.5f)
         {
             Res.Amount++;
             Res.Counter.text = Res.Amount.ToString();
